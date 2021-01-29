@@ -1,6 +1,6 @@
 package main;
 
-public class Foot {
+public class Food {
 	private String foodname;
 	private int peice;
 	private int sinew;
@@ -16,7 +16,7 @@ public class Foot {
 	 * @param peice	价格
 	 * @param sinew	恢复的体力
 	 */
-	public Foot(String foodname,int peice,int sinew) {
+	public Food(String foodname,int peice,int sinew) {
 		this.foodname=foodname;
 		this.peice=peice;
 		this.sinew=sinew;

@@ -21,6 +21,7 @@ public class Pet {
 		this.initlanguage();
 		this.initattackWay();
 	}
+	
 	/**
 	 * 初始化构造方法
 	 * @param name//姓名
@@ -51,6 +52,38 @@ public class Pet {
 		}else {
 			return false;
 		}
+	}
+	
+	/**
+	 * 进食
+	 * @param food
+	 */
+	public void eat(Food food) {
+		if (this.money < food.getPeice()) {
+			System.out.println("你太穷了，我们不招待穷鬼！");
+			return;
+		}
+		if (this.sinew < 400) {
+			System.out.println("您的宝宝病了，根本没有食欲，还是去医院吧！");
+			return;
+		}
+		if (this.sinew == 1000) {
+			System.out.println("您的宝宝太饱了，不能再吃了，要撑死的，小心！");
+			return;
+		}
+		System.out.println("这次吃的是"+food.getFoodname());
+		System.out.println(this.name+"正在幸福的用餐,香香香,真香,还想吃!");
+		System.out.println("食物的体力值:"+food.getSinew());
+		System.out.println("当前宠物的体力值:"+this.sinew);
+		if ((this.sinew+food.getSinew()) > 1000) {
+			System.out.println("恢复体力值:"+(1000-this.sinew));
+			this.sinew = 1000;
+		}else {
+			System.out.println("恢复体力值:"+food.getSinew());
+			this.sinew+=food.getSinew();			
+		}
+		System.out.println("花费金币数:"+food.getPeice());
+		this.money-=food.getPeice();
 	}
 	
 	private void initattackWay() {
