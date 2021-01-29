@@ -21,6 +21,14 @@ public class Pet {
 		this.initlanguage();
 		this.initattackWay();
 	}
+	/**
+	 * 初始化构造方法
+	 * @param name//姓名
+	 * @param sinew//体力
+	 * @param power//力量
+	 * @param mind//智力
+	 * @param money//金钱
+	 */
 	public Pet(String name,int sinew,int power,int mind,int money) {
 		this.name =name;
 		this.sinew=sinew;
@@ -31,7 +39,19 @@ public class Pet {
 		this.money=money;
 	}
 	
-	
+	/**
+	 * 判断是否死亡
+	 * @return
+	 * 1 死亡
+	 * 0 未死亡
+	 */
+	public boolean isDead() {
+		if (sinew<=0) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 	
 	private void initattackWay() {
 		this.attackWay=new String[13];
