@@ -11,6 +11,6 @@ public class Test {
 		Food food=new Food("牛奶",100,100);
 		pet.eat(food);
 		pet.display();
+		pet.talk();
 	}
-
 }

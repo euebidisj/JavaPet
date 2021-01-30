@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Random;
+
 /**
  *宠物类
  * @author lee
@@ -38,6 +40,8 @@ public class Pet {
 		this.attack=power*10;
 		this.defense=mind*3;
 		this.money=money;
+		this.initlanguage();
+		this.initattackWay();
 	}
 	
 	/**
@@ -84,6 +88,13 @@ public class Pet {
 		}
 		System.out.println("花费金币数:"+food.getPeice());
 		this.money-=food.getPeice();
+	}
+	
+	/**
+	 * 聊天
+	 */
+	public void talk() {
+		System.out.println(this.language[new Random().nextInt(20)]);
 	}
 	
 	private void initattackWay() {
