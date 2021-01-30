@@ -10,6 +10,7 @@ public class Test {
 		// TODO Auto-generated method stub
 		@SuppressWarnings("resource")
 		Scanner scanner=new Scanner(System.in);
+		Pet pet=new Pet("PK",600,100,300,1000);
 		while(true) {
 			System.out.println("电子宠物系统");
 			System.out.println("1.宠物领养");
@@ -51,7 +52,6 @@ public class Test {
 				break;
 			}
 			case 8: {
-				Pet pet=new Pet("PK",600,100,300,1000);
 				pet.sleep();
 				break;
 			}

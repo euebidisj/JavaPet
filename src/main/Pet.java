@@ -99,7 +99,18 @@ public class Pet {
 	
 	public void sleep() {
 		String[] sleep= {"忙了一天，终于可以休息了，zzzzzzzzzzzzzzzz........","梦境：哇，大火腿，我要吃大火腿，咔..........!","清晨：败家的宝宝，快醒醒，咬到我的腿了！"};
-		System.out.println(sleep[new Random().nextInt(3)]);
+		for (int i = 0; i < sleep.length; i++) {
+			System.out.println(sleep[i]);
+		}
+		if (this.sinew == 1000) {
+			System.out.println("新的一天开始了,宝宝现在体力值是满的");
+			return;
+		}
+		if (this.sinew+50>1000) {
+			System.out.println("新的一天开始了,恢复了"+(1000-this.sinew)+"点的体力值,当前体力值1000.");
+		} else {
+			System.out.println("新的一天开始了,恢复了50点的体力值,当前体力值"+(this.sinew+=50));
+		}
 	}
 	
 	private void initattackWay() {
