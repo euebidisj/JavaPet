@@ -97,6 +97,11 @@ public class Pet {
 		System.out.println(this.language[new Random().nextInt(20)]);
 	}
 	
+	public void sleep() {
+		String[] sleep= {"忙了一天，终于可以休息了，zzzzzzzzzzzzzzzz........","梦境：哇，大火腿，我要吃大火腿，咔..........!","清晨：败家的宝宝，快醒醒，咬到我的腿了！"};
+		System.out.println(sleep[new Random().nextInt(3)]);
+	}
+	
 	private void initattackWay() {
 		this.attackWay=new String[13];
 		this.attackWay[0]="震山掌";
