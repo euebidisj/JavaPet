@@ -12,7 +12,6 @@ public class Test {
 		@SuppressWarnings("resource")
 		Scanner scanner=new Scanner(System.in);
 		Gamesoart Gm = new Gamesoart();
-//		Pet pet=new Pet("PK",600,100,300,1000);
 		while(true) {
 			System.out.println("\t电子宠物系统");
 			System.out.print("1.宠物领养\t");
@@ -29,10 +28,7 @@ public class Test {
 			case 1: {
 				if (Gm.getMyPet() == null) {
 					System.out.println("\t"+"游戏商店"+"\t");
-//					System.out.println("1.领养宠物\t2.购买食物");
-//					System.out.println("请选择:");
 					int t;
-//					if (t == 1) {
 						for (int i = 0; i < Gm.getpetSoart().length; i++) {
 							System.out.print((i+1)+"."+ Gm.getpetSoart()[i].getName() +"\t");
 						}
@@ -46,7 +42,6 @@ public class Test {
 							}			
 						} while (!(0 < t && t <= Gm.getpetSoart().length));
 						System.out.println("成功领养"+Gm.getpetSoart()[t-1].getName());
-//					}
 				}else {
 					System.out.println("您已经领养过宠物,领养的宠物是["+Gm.getMyPet().getName()+"].不可再次领养.");
 				}
@@ -82,7 +77,11 @@ public class Test {
 				break;
 			}
 			case 4: {
-				
+				if (Gm.getMyPet() == null) {
+					System.out.println("您还没有领养宠物哦!请先领养宠物.");
+					break;
+				}
+				Gm.getMyPet().sleep();
 				break;
 			}
 			case 5: {
