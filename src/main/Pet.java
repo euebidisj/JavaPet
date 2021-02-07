@@ -17,6 +17,7 @@ public class Pet {
 	private int money;	//金钱
 	
 	private String[] attackWay;	//攻击方式数组
+
 	private String[] language;	//语言数组
 	
 	public Pet() {				//初始化
@@ -144,6 +145,10 @@ public class Pet {
 		this.attackWay[0]="沐家拳";
 		this.attackWay[0]="伏虎拳";
 		this.attackWay[0]="六合拳";
+	}
+	
+	public void setAttackWay(String[] attackWay) {
+		this.attackWay = attackWay;
 	}
 	
 	private void initlanguage() {
