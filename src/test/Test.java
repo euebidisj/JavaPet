@@ -29,30 +29,35 @@ public class Test {
 			case 1: {
 				if (Gm.getMyPet() == null) {
 					System.out.println("\t"+"游戏商店"+"\t");
-					System.out.println("1.领养宠物\t2.购买食物");
-					System.out.println("请选择:");
-					int t =scanner.nextInt();
-					if (t == 1) {
-						Pet[] ps = Gm.getpetSoart();
-						for (int i = 0; i < ps.length; i++) {
-							System.out.print((i+1)+"."+ ps[i].getName() +"\t");
+//					System.out.println("1.领养宠物\t2.购买食物");
+//					System.out.println("请选择:");
+					int t;
+//					if (t == 1) {
+						for (int i = 0; i < Gm.getpetSoart().length; i++) {
+							System.out.print((i+1)+"."+ Gm.getpetSoart()[i].getName() +"\t");
 						}
 						System.out.println("\n请选择:");
 						do {
 							t = scanner.nextInt();
 							if (0 < t && t <= Gm.getpetSoart().length) {
-								Gm.setMyPet(ps[t-1]);
+								Gm.setMyPet(Gm.getpetSoart()[t-1]);
 							}else {
 								System.out.println("输入错误请重新输入:");
 							}			
 						} while (!(0 < t && t <= Gm.getpetSoart().length));
 						System.out.println("成功领养"+Gm.getpetSoart()[t-1].getName());
-					}
+//					}
+				}else {
+					System.out.println("您已经领养过宠物,领养的宠物是["+Gm.getMyPet().getName()+"].不可再次领养.");
 				}
 				break;
 			}
 			case 2: {
-				
+				if (Gm.getMyPet() == null) {
+					System.out.println("您还没有领养宠物哦!请先领养宠物.");
+					break;
+				}
+				Gm.getMyPet().talk();
 				break;
 			}
 			case 3: {
