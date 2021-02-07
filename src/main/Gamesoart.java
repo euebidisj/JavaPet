@@ -28,9 +28,9 @@ public class Gamesoart {
 	
 	public void setpetSoart() {
 		this.petSoart = new Pet[3];
-		this.petSoart[0] = new Pet("皮卡丘",390,900,200,3000);
-		this.petSoart[1] = new Pet("喷火龙",130,700,2200,3000);
-		this.petSoart[2] = new Pet("超梦",230,800,2100,3000);
+		this.petSoart[0] = new Pet("皮卡丘",590,900,200,3000);
+		this.petSoart[1] = new Pet("喷火龙",630,700,2200,3000);
+		this.petSoart[2] = new Pet("超梦",430,800,2100,3000);
 		String[] ack = {
 				"凤翅天翔",
 				"凤舞九天",

@@ -12,7 +12,7 @@ public class Test {
 		@SuppressWarnings("resource")
 		Scanner scanner=new Scanner(System.in);
 		Gamesoart Gm = new Gamesoart();
-		Pet pet=new Pet("PK",600,100,300,1000);
+//		Pet pet=new Pet("PK",600,100,300,1000);
 		while(true) {
 			System.out.println("\t电子宠物系统");
 			System.out.print("1.宠物领养\t");
@@ -23,7 +23,7 @@ public class Test {
 			System.out.println("6.查看宠物状态");
 			System.out.print("7.退出\t\t");
 			System.out.println("8.测试");
-			System.out.println("请选择:");
+			System.out.print("请选择:");
 			int clos = scanner.nextInt();
 			switch (clos) {
 			case 1: {
@@ -36,7 +36,7 @@ public class Test {
 						for (int i = 0; i < Gm.getpetSoart().length; i++) {
 							System.out.print((i+1)+"."+ Gm.getpetSoart()[i].getName() +"\t");
 						}
-						System.out.println("\n请选择:");
+						System.out.print("\n请选择:");
 						do {
 							t = scanner.nextInt();
 							if (0 < t && t <= Gm.getpetSoart().length) {
@@ -61,7 +61,24 @@ public class Test {
 				break;
 			}
 			case 3: {
-				
+				if (Gm.getMyPet() == null) {
+					System.out.println("您还没有领养宠物哦!请先领养宠物.");
+					break;
+				}
+				System.out.println("\t游戏商店");
+				for (int i = 0; i < Gm.getpetFood().length; i++) {
+					System.out.print((i+1)+"."+Gm.getpetFood()[i].getFoodname()+"    ");
+				}
+				System.out.print("\n请选择:");
+				int t;
+				do {
+					t = scanner.nextInt();
+					if (0 < t && t <= Gm.getpetFood().length) {
+						Gm.myPet.eat(Gm.getpetFood()[t-1]);
+					}else {
+						System.out.println("输入错误请重新输入:");
+					}
+				} while (!(0 < t && t <= Gm.getpetFood().length));
 				break;
 			}
 			case 4: {
@@ -80,7 +97,6 @@ public class Test {
 				break;
 			}
 			case 8: {
-				pet.sleep();
 				break;
 			}
 			default:
