@@ -2,7 +2,7 @@ package test;
 
 import java.util.Scanner;
 import main.Food;
-import main.Gamesoart;
+import main.GameManager;
 import main.Pet;
 
 public class Test {
@@ -11,7 +11,7 @@ public class Test {
 		// TODO Auto-generated method stub
 		@SuppressWarnings("resource")
 		Scanner scanner=new Scanner(System.in);
-		Gamesoart Gm = new Gamesoart();
+		GameManager Gm = new GameManager();
 		while(true) {
 			System.out.println("\t电子宠物系统");
 			System.out.print("1.宠物领养\t");
@@ -89,10 +89,15 @@ public class Test {
 				break;
 			}
 			case 6: {
-				
+				if (Gm.getMyPet() == null) {
+					System.out.println("您还没有领养宠物哦!请先领养宠物.");
+					break;
+				}
+				Gm.getMyPet().display();
 				break;
 			}
 			case 7: {
+				System.exit(0);
 				break;
 			}
 			case 8: {

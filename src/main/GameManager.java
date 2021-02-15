@@ -1,6 +1,6 @@
 package main;
 
-public class Gamesoart {
+public class GameManager {
 	public Pet[] petSoart;
 	public Pet myPet;
 	
@@ -21,7 +21,7 @@ public class Gamesoart {
 		return petFood;
 	}
 	
-	public Gamesoart() {	//默认构造方法 初始化宠物和食物信息
+	public GameManager() {	//默认构造方法 初始化宠物和食物信息
 		setpetFood();
 		setpetSoart();
 	}

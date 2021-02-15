@@ -45,6 +45,7 @@ public class Pet {
 		this.initattackWay();
 	}
 	
+	
 	/**
 	 * 判断是否死亡
 	 * @return
