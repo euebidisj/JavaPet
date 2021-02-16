@@ -9,6 +9,44 @@ public class Monster {
 	private int defense;//防御力
 	private String[] sttackWay;	//攻击方式
 	
+	public Monster(){
+		String[] sw = {  "凤翅天翔",
+						"凤舞九天",
+						"有凤来仪",
+						"百鸟朝凤",
+						"龙飞凤舞",
+						"龙飞凤舞",
+						"见龙在田",
+						"飞龙在天",
+						"亢龙有悔",
+						"神龙摆尾"
+						};
+		switch (new Random().nextInt(2)) {
+			case 0:
+				this.name = "嗜血山妖";
+				this.life = 10000;
+				this.attack = 120;
+				this.defense = 100;
+				this.sttackWay = sw;
+				break;
+			case 1:
+				this.name = "魅影妖狐";
+				this.life = 20000;
+				this.attack = 220;
+				this.defense = 200;
+				this.sttackWay = sw;
+				break;
+			case 2:
+				this.name = "巡山山妖";
+				this.life = 15000;
+				this.attack = 100;
+				this.defense = 10;
+				this.sttackWay = sw;
+				break;
+			default:
+				break;
+		}
+	}
 
 	// public Monster() {
 	// 	Monster[] monsters = new Monster[3];

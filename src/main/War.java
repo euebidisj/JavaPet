@@ -12,41 +12,9 @@ public class War {
 	private int maxMoney;//掉落金钱的最大值
 	
 	public War() {
-		initMonster();
+		this.maxMoney = 50;
 	}
 	
-	public void initMonster() {
-		monsters = new Monster[3];
-		monsters[0] = new Monster();
-		monsters[0].setName("嗜血山妖");
-		monsters[0].setAttack(900);
-		monsters[0].setDefense(100);
-		monsters[0].setLife(300);
-		String[] SttackWay = {  "凤翅天翔",
-								"凤舞九天",
-								"有凤来仪",
-								"百鸟朝凤",
-								"龙飞凤舞",
-								"龙飞凤舞",
-								"见龙在田",
-								"飞龙在天",
-								"亢龙有悔",
-								"神龙摆尾"
-								};
-		monsters[0].setSttackWay(SttackWay);
-		monsters[1] = new Monster();
-		monsters[1].setName("魅影妖狐");
-		monsters[1].setAttack(800);
-		monsters[1].setDefense(200);
-		monsters[1].setLife(300);
-		monsters[1].setSttackWay(SttackWay);
-		monsters[2] = new Monster();
-		monsters[2].setName("巡山山妖");
-		monsters[2].setAttack(790);
-		monsters[2].setDefense(10);
-		monsters[2].setLife(100);
-		monsters[2].setSttackWay(SttackWay);
-	}
 	
 	public void displsay() {
 		System.out.println("战场名称\t要求力量\t要求智力\t须杀怪数\t掉落最大金钱数");
@@ -71,7 +39,8 @@ public class War {
 			return;
 		}
 		for (int i = 0; i < this.monsterNum; i++) {
-			Monster m1 = monsters[new Random().nextInt(monsters.length - 1)];
+			// Monster m1 = monsters[new Random().nextInt(monsters.length - 1)];
+			Monster m1 = new Monster();
 			System.out.println("怪物名称["+ m1.getName()+"]");
 			while(m1.getLife() > 0 && pet.getSinew() > 0){
 				Thread.currentThread();
@@ -82,13 +51,10 @@ public class War {
 				System.out.println("宠物攻击结束");
 				System.out.println("----------------------------------");
 			}
-			pet.setMoney(pet.getMoney() + new Random().nextInt(this.maxMoney));
+			pet.setMoney(pet.getMoney() + new Random().nextInt(this.maxMoney)); //掉落随机数额金钱
 		}
 	}
 
-	// public void tt(Pet pet){
-	// 	System.out.println("这是测试类");
-	// }
 		
 		
 	public String getWarName() {

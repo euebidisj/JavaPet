@@ -1,16 +1,12 @@
 package test;
 
 import java.util.Scanner;
-import main.Food;
 import main.GameManager;
-import main.Monster;
-import main.Pet;
 import main.War;
 
 public class Test {
 
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
 		@SuppressWarnings("resource")
 		Scanner scanner=new Scanner(System.in);
 		GameManager Gm = new GameManager();

@@ -115,19 +115,22 @@ public class Pet {
 		}
 	}
 	
-	public void hit(Monster monster){
+	public int hit(Monster monster){
 		//随机输出攻击方法
 		System.out.println("宠物使出了["+this.attackWay[new Random().nextInt(this.attackWay.length - 1)]+"]");
 		if (this.attack > monster.getDefense()) {
-			monster.setDefense(monster.getLife()-this.attack-monster.getDefense());
+			monster.setLife(monster.getLife()-this.attack-monster.getDefense());
 			System.out.println("怪物消耗了["+(this.attack-monster.getDefense())+"]点体力");
+			return monster.getLife();
 		}else {
 			System.out.println("怪物消耗了[1]点体力");
 			monster.setLife(monster.getLife()-1);
 		}
 		if (monster.getLife()<=0) {
 			System.out.println("战斗胜利:消灭怪物" + monster.getName());
+			return 0;
 		}
+		return monster.getLife();
 	}
 	
 	private void initattackWay() {
