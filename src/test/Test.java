@@ -3,11 +3,13 @@ package test;
 import java.util.Scanner;
 import main.Food;
 import main.GameManager;
+import main.Monster;
 import main.Pet;
+import main.War;
 
 public class Test {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		@SuppressWarnings("resource")
 		Scanner scanner=new Scanner(System.in);
@@ -85,7 +87,16 @@ public class Test {
 				break;
 			}
 			case 5: {
-				
+				if (Gm.getMyPet() == null) {
+					System.out.println("您还没有领养宠物哦!请先领养宠物.");
+					break;
+				}
+				War war = new War();
+				if (!war.isComeIn(Gm.getMyPet())) {
+					System.out.println("宠物无法进入战场");
+					break;
+				}
+				war.waring(Gm.getMyPet());
 				break;
 			}
 			case 6: {
@@ -101,10 +112,21 @@ public class Test {
 				break;
 			}
 			case 8: {
+				// if (Gm.getMyPet() == null) {
+				// 	System.out.println("您还没有领养宠物哦!请先领养宠物.");
+				// 	break;
+				// }
+				// War war = new War();
+				// if (!war.isComeIn(Gm.getMyPet())) {
+				// 	System.out.println("宠物无法进入战场");
+				// 	break;
+				// }
+				// war.waring(Gm.getMyPet());
 				break;
 			}
 			default:
-				throw new IllegalArgumentException("Unexpected value: " + clos);
+				System.out.println("输入错误!");
+				break;
 			}
 		}
 //		Pet pet=new Pet("PK",600,100,300,1000);

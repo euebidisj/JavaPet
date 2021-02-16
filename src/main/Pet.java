@@ -117,35 +117,34 @@ public class Pet {
 	
 	public void hit(Monster monster){
 		//随机输出攻击方法
-		System.out.println(this.attackWay[new Random().nextInt(this.attackWay.length)]);
+		System.out.println("宠物使出了["+this.attackWay[new Random().nextInt(this.attackWay.length - 1)]+"]");
 		if (this.attack > monster.getDefense()) {
 			monster.setDefense(monster.getLife()-this.attack-monster.getDefense());
-			System.out.println("怪物消耗了"+(this.attack-monster.getDefense()));
+			System.out.println("怪物消耗了["+(this.attack-monster.getDefense())+"]点体力");
 		}else {
-			System.out.println("怪物消耗了1点体力");
+			System.out.println("怪物消耗了[1]点体力");
 			monster.setLife(monster.getLife()-1);
 		}
 		if (monster.getLife()<=0) {
-			System.out.println("战斗胜利:消灭怪物\"monster.getName()\"");
+			System.out.println("战斗胜利:消灭怪物" + monster.getName());
 		}
 	}
 	
 	private void initattackWay() {
 		this.attackWay=new String[13];
 		this.attackWay[0]="震山掌";
-		this.attackWay[0]="毒砂掌";
-		this.attackWay[0]="玄冥掌";
-		this.attackWay[0]="铁沙掌";
-		this.attackWay[0]="红砂掌";
-		this.attackWay[0]="截心掌";
-		this.attackWay[0]="七伤拳";
-		this.attackWay[0]="灵宝拳";
-		this.attackWay[0]="破玉拳";
-		this.attackWay[0]="上清拳";
-		this.attackWay[0]="太极拳";
-		this.attackWay[0]="沐家拳";
-		this.attackWay[0]="伏虎拳";
-		this.attackWay[0]="六合拳";
+		this.attackWay[1]="毒砂掌";
+		this.attackWay[2]="玄冥掌";
+		this.attackWay[3]="铁沙掌";
+		this.attackWay[4]="红砂掌";
+		this.attackWay[5]="截心掌";
+		this.attackWay[6]="七伤拳";
+		this.attackWay[7]="灵宝拳";
+		this.attackWay[8]="破玉拳";
+		this.attackWay[9]="上清拳";
+		this.attackWay[10]="太极拳";
+		this.attackWay[11]="沐家拳";
+		this.attackWay[12]="伏虎拳";
 	}
 	
 	public void setAttackWay(String[] attackWay) {

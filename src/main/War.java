@@ -1,22 +1,25 @@
 package main;
 
+import java.util.Random;
+
 public class War {
-	String warName;//战场的名称
-	int power;//要求的力量
-	int mind;//要求的智力
-	Monster[] monsters;//战场的怪物
+	private String warName;//战场的名称
+	private int power;//要求的力量
+	private int mind;//要求的智力
+	private Monster[] monsters;//战场的怪物
 	
-	int monsterNum = 5;//必须杀怪的数量
-	int maxMoney;//掉落金钱的最大值
+	private int monsterNum = 5;//必须杀怪的数量
+	private int maxMoney;//掉落金钱的最大值
 	
 	public War() {
 		initMonster();
 	}
 	
 	public void initMonster() {
-		this.monsters = new Monster[3];
+		monsters = new Monster[3];
+		monsters[0] = new Monster();
 		monsters[0].setName("嗜血山妖");
-		monsters[0].setAttack(120);
+		monsters[0].setAttack(900);
 		monsters[0].setDefense(100);
 		monsters[0].setLife(300);
 		String[] SttackWay = {  "凤翅天翔",
@@ -31,18 +34,18 @@ public class War {
 								"神龙摆尾"
 								};
 		monsters[0].setSttackWay(SttackWay);
+		monsters[1] = new Monster();
 		monsters[1].setName("魅影妖狐");
-		monsters[1].setAttack(220);
+		monsters[1].setAttack(800);
 		monsters[1].setDefense(200);
 		monsters[1].setLife(300);
 		monsters[1].setSttackWay(SttackWay);
-		monsters[1].setName("巡山山妖");
-		monsters[1].setAttack(100);
-		monsters[1].setDefense(10);
-		monsters[1].setLife(100);
-		monsters[1].setSttackWay(SttackWay);
-		
-
+		monsters[2] = new Monster();
+		monsters[2].setName("巡山山妖");
+		monsters[2].setAttack(790);
+		monsters[2].setDefense(10);
+		monsters[2].setLife(100);
+		monsters[2].setSttackWay(SttackWay);
 	}
 	
 	public void displsay() {
@@ -62,13 +65,24 @@ public class War {
 		return true;
 	}
 	
-	public void waring(Pet pet){
+	public void waring(Pet pet) throws InterruptedException {
 		if (!this.isComeIn(pet)) {
 			System.out.println("该宠物因不满足条件无法进入战场!");
 			return;
 		}
-		for (int i = 0; i < monsters.length; i++) {
-			
+		for (int i = 0; i < this.monsterNum; i++) {
+			Monster m1 = monsters[new Random().nextInt(monsters.length - 1)];
+			System.out.println("怪物名称["+ m1.getName()+"]");
+			while(m1.getLife() > 0 && pet.getSinew() > 0){
+				Thread.currentThread();
+				Thread.sleep(1000);
+				m1.hit(pet);
+				System.out.println("怪物攻击结束");
+				pet.hit(m1);
+				System.out.println("宠物攻击结束");
+				System.out.println("----------------------------------");
+			}
+			pet.setMoney(pet.getMoney() + new Random().nextInt(this.maxMoney));
 		}
 	}
 
