@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <source_groups>
+        <source_group_374aa790-4762-4b1f-aab0-5c28e39ea2d4>
+            <java_standard>12</java_standard>
+            <name>Java Source Group</name>
+            <source_extensions>
+                <source_extension>.java</source_extension>
+            </source_extensions>
+            <status>enabled</status>
+            <type>Java Source Group</type>
+            <use_jre_system_library>1</use_jre_system_library>
+        </source_group_374aa790-4762-4b1f-aab0-5c28e39ea2d4>
+    </source_groups>
+    <version>8</version>
+</config>

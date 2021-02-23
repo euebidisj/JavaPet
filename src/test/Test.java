@@ -27,19 +27,19 @@ public class Test {
 				if (Gm.getMyPet() == null) {
 					System.out.println("\t"+"游戏商店"+"\t");
 					int t;
-						for (int i = 0; i < Gm.getpetSoart().length; i++) {
-							System.out.print((i+1)+"."+ Gm.getpetSoart()[i].getName() +"\t");
-						}
-						System.out.print("\n请选择:");
-						do {
-							t = scanner.nextInt();
-							if (0 < t && t <= Gm.getpetSoart().length) {
-								Gm.setMyPet(Gm.getpetSoart()[t-1]);
-							}else {
-								System.out.println("输入错误请重新输入:");
-							}			
-						} while (!(0 < t && t <= Gm.getpetSoart().length));
-						System.out.println("成功领养"+Gm.getpetSoart()[t-1].getName());
+					for (int i = 0; i < Gm.getpetSoart().length; i++) {
+						System.out.print((i+1)+"."+ Gm.getpetSoart()[i].getName() +"\t");
+					}
+					System.out.print("\n请选择:");
+					do {
+						t = scanner.nextInt();
+						if (0 < t && t <= Gm.getpetSoart().length) {
+							Gm.setMyPet(Gm.getpetSoart()[t-1]);
+						}else {
+							System.out.println("输入错误请重新输入:");
+						}			
+					} while (!(0 < t && t <= Gm.getpetSoart().length));
+					System.out.println("成功领养"+Gm.getpetSoart()[t-1].getName());
 				}else {
 					System.out.println("您已经领养过宠物,领养的宠物是["+Gm.getMyPet().getName()+"].不可再次领养.");
 				}
